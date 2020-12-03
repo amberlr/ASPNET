@@ -23,5 +23,13 @@ namespace Testing.Controllers
 
             return View(products);
         }
+
+        //create a ViewProduct() method here and in the scope call out to GetProduct method which will view a single product with return
+        public IActionResult ViewProduct(int id)
+        {
+            var product = repo.GetProduct(id);
+
+            return View(product);
+        }
     }
 }

@@ -19,5 +19,12 @@ namespace Testing
         {
             return _conn.Query<Product>("SELECT * FROM products;");
         }
+
+        //Using dapper method here to return a single row
+        public Product GetProduct(int id)
+        {
+            return _conn.QuerySingle<Product>("SELECT * FROM products WHERE ProductID = @id",
+                new { id = id });
+        }
     }
 }
