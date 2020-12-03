@@ -31,5 +31,25 @@ namespace Testing.Controllers
 
             return View(product);
         }
+
+        //create UpdateProduct() controller method here
+        public IActionResult UpdateProduct(int id)
+        {
+            Product prod = repo.GetProduct(id);
+
+            if (prod == null)
+            {
+                return View("ProductNotFound");
+            }
+            return View(prod);
+        }
+
+        //add UpdateProductToDatabase here - not the same as UpdateProduct() above
+        public IActionResult UpdateProductToDatabase(Product product)
+        {
+            repo.UpdateProduct(product);
+
+            return RedirectToAction("ViewProduct", new { id = product.ProductID });
+        }
     }
 }

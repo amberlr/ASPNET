@@ -26,5 +26,13 @@ namespace Testing
             return _conn.QuerySingle<Product>("SELECT * FROM products WHERE ProductID = @id",
                 new { id = id });
         }
+
+        //using dapper method to allow updates for products but we making htis void since we aren't returning something..
+        //we are actually changing something
+        public void UpdateProduct(Product product)
+        {
+            _conn.Execute("UPDATE products SET Name = @name, Price = @price WHERE ProductID = @id",
+                new { name = product.Name, price = product.Price, id = product.ProductID });
+        }
     }
 }
