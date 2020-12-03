@@ -17,5 +17,8 @@ namespace Testing.Models
         public int CategoryID { get; set; }
         public int OnSale { get; set; }
         public int StockLevel { get; set; }
+
+        //4th portion of exercise where we allow users to make new products
+        public IEnumerable<Category> Categories { get; set; }
     }
 }

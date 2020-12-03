@@ -15,5 +15,11 @@ namespace Testing
 
         //Part Three of assignment - allowing user to make updates to a product - make void
         public void UpdateProduct(Product product);
+
+        //We add the below three for part 4 of the exercise
+        //since they need to create a new product.. we have to give them the option to add info for multiple parts of the product
+        public void InsertProduct(Product productToInsert);
+        public IEnumerable<Category> GetCategories();
+        public Product AssignCategory();
     }
 }
