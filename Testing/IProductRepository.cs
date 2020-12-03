@@ -21,5 +21,8 @@ namespace Testing
         public void InsertProduct(Product productToInsert);
         public IEnumerable<Category> GetCategories();
         public Product AssignCategory();
+
+        //part 5 new stubbed out method to use DeleteProduct
+        public void DeleteProduct(Product product);
     }
 }

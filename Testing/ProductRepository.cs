@@ -53,5 +53,16 @@ namespace Testing
 
             return product;
         }
+
+        //part 5 - creating implmentation of database for delete product
+        public void DeleteProduct(Product product)
+        {
+            _conn.Execute("DELETE FROM REVIEWS WHERE ProductID = @id;",
+                                       new { id = product.ProductID });
+            _conn.Execute("DELETE FROM Sales WHERE ProductID = @id;",
+                                       new { id = product.ProductID });
+            _conn.Execute("DELETE FROM Products WHERE ProductID = @id;",
+                                       new { id = product.ProductID });
+        }
     }
 }
