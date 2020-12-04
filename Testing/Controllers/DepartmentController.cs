@@ -44,5 +44,27 @@ namespace Testing.Controllers
 
             return RedirectToAction("ViewDepartment", new { id = department.DepartmentID });
         }
+
+        //not sure if this is needed --edit: this does work.. just do not include the category info that product tables had
+        public IActionResult InsertDepartment()
+        {
+            var dept = repo.AssignDepartment();
+
+            return View(dept);
+        }
+        //this is fine
+        public IActionResult InsertDepartmentToDatabase(Department departmentToInsert)
+        {
+            repo.InsertDepartment(departmentToInsert);
+
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult DeleteDepartment(Department department)
+        {
+            repo.DeleteDepartment(department);
+
+            return RedirectToAction("Index");
+        }
     }
 }

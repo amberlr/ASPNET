@@ -17,3 +17,11 @@
 <div style="display: block">
     <a href="/Department/UpdateDepartment/@Model.DepartmentID">Update this Department</a>
 </div>
+
+<div style="display: block">
+    @using (Html.BeginForm("DeleteDepartment", "Department", "Post"))
+    {
+        <input type="hidden" asp-for="DepartmentID" value="@Model.DepartmentID" />
+        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this department" />
+    }
+</div>
