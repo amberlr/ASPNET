@@ -1,0 +1,15 @@
+﻿@model Department
+
+<h2>Update @Model.Name</h2>
+
+@using (Html.BeginForm("UpdateDepartmentToDatabase", "Department", "Post"))
+{
+    <input asp-for="DepartmentID" type="hidden" value="@Model.DepartmentID" />
+
+    <label asp-for="Name" class="control-label">Name</label>
+
+    <input type="text" name="Name" class="form-control" value="@Model.Name" />
+ 
+    <input type="submit" value="Update Department" class="btn btn-primary" />
+
+}

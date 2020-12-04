@@ -9,5 +9,7 @@ namespace Testing
     public interface IDepartmentRepository
     {
         public IEnumerable<Department> GetAllDepartments();
+        public Department GetDepartment(int id);
+        public void UpdateDepartment(Department department);
     }
 }

@@ -1,0 +1,19 @@
+﻿@model Department
+
+<h3>@Model.Name Information</h3>
+
+<table class="table">
+    <tr>
+        <th>Department ID</th>
+        <th>Name</th>
+    </tr>
+    <tr>
+        <td>@Model.DepartmentID</td>
+        <td>@Model.Name</td>
+    </tr>
+
+</table>
+
+<div style="display: block">
+    <a href="/Department/UpdateDepartment/@Model.DepartmentID">Update this Department</a>
+</div>
