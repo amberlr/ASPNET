@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Department>
+
+<h2>Departments</h2>
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+    </tr>
+
+    @foreach (var dept in Model)
+    {
+        <tr>
+            <td><a href=/Department/ViewDepartment/@dept.DepartmentID>@dept.DepartmentID</a></td>
+            <td>@dept.Name</td>
+        </tr>
+
+    }
+</table>
