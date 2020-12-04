@@ -1,5 +1,20 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@model Category
+<h2>Create a New Category</h2>
+@using (Html.BeginForm("InsertCategoryToDatabase", "Category", "Post"))
+{
+    <input asp-for="CategoryID" type="hidden" value="" />
+    <label asp-for="Name" class="control-label">Name</label>
+    <input type="text" name="Name" class="form-control" value="" />
+    <div class="form-group">
+        <label for="">Select a Department</label>
+        <select class="form-control" name="DepartmentID" value="">
+            
+            <!--I believe, when we are picking department to attach to category.. it will show us the ID and name-->
+            @foreach (var dept in Model.Departments)
+            {
+                <option value="@dept.DepartmentID">@dept.DepartmentID @dept.Name</option>
+            }
+        </select>
+    </div>
+    <input type="submit" value="Create Category" class="btn btn-primary" />
 }

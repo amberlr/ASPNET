@@ -19,3 +19,11 @@
 <div style="display: block">
     <a href="/Category/UpdateCategory/@Model.CategoryID">Update this Category</a>
 </div>
+
+<div style="display: block">
+    @using (Html.BeginForm("DeleteCategory", "Category", "Post"))
+    {
+        <input type="hidden" asp-for="CategoryID" value="@Model.CategoryID" />
+        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this category" />
+    }
+</div>

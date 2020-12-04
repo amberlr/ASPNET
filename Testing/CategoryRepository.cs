@@ -32,5 +32,32 @@ namespace Testing
                 new { name = category.Name, id = category.CategoryID });
         }
 
+        public void InsertCategory(Category categoryToInsert)
+        {
+            _conn.Execute("INSERT INTO categories (NAME, DEPARTMENTID) VALUES (@name, @departmentID);",
+                new { name = categoryToInsert.Name, departmentID = categoryToInsert.DepartmentID });
+        }
+
+        //need to get departmentIDs as well.. should I add the department names at some point?
+        public IEnumerable<Department> GetDepartments()
+        {
+            return _conn.Query<Department>("SELECT * FROM departments;");
+        }
+        public Category AssignDepartment()
+        {
+            var departmentList = GetDepartments();
+            var category = new Category();
+            category.Departments = departmentList;
+
+            return category;
+        }
+
+        public void DeleteCategory(Category category)
+        {
+            _conn.Execute("DELETE FROM products WHERE CategoryID = @id;",
+                                       new { id = category.CategoryID });
+            _conn.Execute("DELETE FROM categories WHERE CategoryID = @id;",
+                                       new { id = category.CategoryID });
+        }
     }
 }

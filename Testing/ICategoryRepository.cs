@@ -12,17 +12,19 @@ namespace Testing
         public IEnumerable<Category> GetAllCategories();
         //view one at a time
         public Category GetCategory(int id);
+
         //update
         public void UpdateCategory(Category category);
-        ////create
-        //public void InsertCategory(Category categoryToInsert);
 
-        ////since categories has a DepartmentID column.. we have to call out to that
-        ////this may not apply to all tables
-        //public IEnumerable<Department> GetDepartments();
-        //public Category AssignDepartment();
+        //create
+        public void InsertCategory(Category categoryToInsert);
 
-        ////delete
-        //public void DeleteCategory(Category category);
+        //since categories has a DepartmentID column.. we have to call out to that
+        //this may not apply to all tables
+        public IEnumerable<Department> GetDepartments();
+        public Category AssignDepartment();
+
+        //delete
+        public void DeleteCategory(Category category);
     }
 }

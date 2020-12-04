@@ -45,25 +45,25 @@ namespace Testing.Controllers
             return RedirectToAction("ViewCategory", new { id = category.CategoryID });
         }
 
-        //public IActionResult InsertCategory()
-        //{
-        //    var cat = repo.AssignDepartment();
+        public IActionResult InsertCategory()
+        {
+            var cat = repo.AssignDepartment();
 
-        //    return View(cat);
-        //}
+            return View(cat);
+        }
 
-        //public IActionResult InsertCategoryToDatabase(Category categoryToInsert)
-        //{
-        //    repo.InsertCategory(categoryToInsert);
+        public IActionResult InsertCategoryToDatabase(Category categoryToInsert)
+        {
+            repo.InsertCategory(categoryToInsert);
 
-        //    return RedirectToAction("Index");
-        //}
+            return RedirectToAction("Index");
+        }
 
-        //public IActionResult DeleteCategory(Category category)
-        //{
-        //    repo.DeleteCategory(category);
+        public IActionResult DeleteCategory(Category category)
+        {
+            repo.DeleteCategory(category);
 
-        //    return RedirectToAction("Index");
-        //}
+            return RedirectToAction("Index");
+        }
     }
 }
