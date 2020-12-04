@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Testing.Models;
 
 namespace Testing.Controllers
 {
@@ -26,23 +27,23 @@ namespace Testing.Controllers
             return View(category);
         }
 
-        //public IActionResult UpdateCategory(int id)
-        //{
-        //    Category cat = repo.GetCategory(id);
+        public IActionResult UpdateCategory(int id)
+        {
+            Category cat = repo.GetCategory(id);
 
-        //    if (cat == null)
-        //    {
-        //        return View("CategoryNotFound");
-        //    }
-        //    return View(cat);
-        //}
+            if (cat == null)
+            {
+                return View("CategoryNotFound");
+            }
+            return View(cat);
+        }
 
-        //public IActionResult UpdateCategoryToDatabase(Category category)
-        //{
-        //    repo.UpdateCategory(category);
+        public IActionResult UpdateCategoryToDatabase(Category category)
+        {
+            repo.UpdateCategory(category);
 
-        //    return RedirectToAction("ViewCategory", new { id = category.CategoryID });
-        //}
+            return RedirectToAction("ViewCategory", new { id = category.CategoryID });
+        }
 
         //public IActionResult InsertCategory()
         //{

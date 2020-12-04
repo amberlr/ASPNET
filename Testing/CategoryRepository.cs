@@ -26,5 +26,11 @@ namespace Testing
                 new { id = id });
         }
 
+        public void UpdateCategory(Category category)
+        {
+            _conn.Execute("UPDATE categories SET Name = @name WHERE CategoryID = @id",
+                new { name = category.Name, id = category.CategoryID });
+        }
+
     }
 }
