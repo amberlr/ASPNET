@@ -34,8 +34,10 @@ namespace Testing
             });
 
             services.AddTransient<IProductRepository, ProductRepository>();
-            //can I do this?:
+            //can I do this?: edit - yes
             services.AddTransient<IDepartmentRepository, DepartmentRepository>();
+
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
 
             services.AddControllersWithViews();
         }
