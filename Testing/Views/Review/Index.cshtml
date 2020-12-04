@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Review>
+
+<h2>Reviews</h2>
+<table class="table">
+    <tr>
+        <!--should I even include review ID?-->
+        <th>Review ID</th>
+        <th>Product ID</th>
+        <th>Customer</th>
+        <th>Rating</th>
+        <th>Comments</th>
+    </tr>
+
+    @foreach (var review in Model)
+    {
+        <tr>
+            <td><a href=/Review/ViewReview/@review.ReviewID.>@review.ReviewID</a></td>
+            <td>@review.ProductID</td>
+            <td>@review.Reviewer</td>
+            <td>@review.Rating</td>
+            <td>@review.Comment</td>
+        </tr>
+
+    }
+</table>
